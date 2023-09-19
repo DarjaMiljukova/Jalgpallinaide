@@ -22,7 +22,7 @@ namespace Jalgpallinaide
             Y = y;
         }
 
-        public void SetSpeed(double vx, double vy)
+        public void SetSpeed(double vx, double vy) //установка скорости
         {
             _vx = vx;
             _vy = vy;
@@ -32,12 +32,12 @@ namespace Jalgpallinaide
         {
             double newX = X + _vx;
             double newY = Y + _vy;
-            if (_game.Stadium.IsIn(newX, newY))
+            if (_game.Stadium.IsIn(newX, newY)) 
             {
                 X = newX;
                 Y = newY;
             }
-            else
+            else //если улетел мяч за поле, то возращение на 0 0
             {
                 _vx = 0;
                 _vy = 0;

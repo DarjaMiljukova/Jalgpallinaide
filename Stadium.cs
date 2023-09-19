@@ -18,7 +18,7 @@ namespace Jalgpallinaide
 
         public int Height { get; }
 
-        public bool IsIn(double x, double y) //True- pall 
+        public bool IsIn(double x, double y) //True- pall sees, False - pall väja
         {
             return x >= 0 && x < Width && y >= 0 && y < Height;
         }

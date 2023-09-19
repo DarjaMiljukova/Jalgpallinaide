@@ -13,6 +13,8 @@ namespace Jalgpallinaide
         public Stadium Stadium { get; }
         public Ball Ball { get; private set; }
 
+
+        //конструктор
         public Game(Team homeTeam, Team awayTeam, Stadium stadium)
         {
             HomeTeam = homeTeam;
@@ -28,22 +30,22 @@ namespace Jalgpallinaide
             HomeTeam.StartGame(Stadium.Width / 2, Stadium.Height);
             AwayTeam.StartGame(Stadium.Width / 2, Stadium.Height);
         }
-        private (double, double) GetPositionForAwayTeam(double x, double y)
+        private (double, double) GetPositionForAwayTeam(double x, double y) //Получение позиции для выездной команды
         {
             return (Stadium.Width - x, Stadium.Height - y);
         }
 
-        public (double, double) GetPositionForTeam(Team team, double x, double y)
+        public (double, double) GetPositionForTeam(Team team, double x, double y)//Получение позиции команды
         {
-            return team == HomeTeam ? (x, y) : GetPositionForAwayTeam(x, y);
+            return team == HomeTeam ? (x, y) : GetPositionForAwayTeam(x, y); // ? либо та команда либо другая
         }
 
-        public (double, double) GetBallPositionForTeam(Team team)
+        public (double, double) GetBallPositionForTeam(Team team) //Получение позиции мяча для команды
         {
             return GetPositionForTeam(team, Ball.X, Ball.Y);
         }
 
-        public void SetBallSpeedForTeam(Team team, double vx, double vy)
+        public void SetBallSpeedForTeam(Team team, double vx, double vy) //Установить скорость мяча для команды
         {
             if (team == HomeTeam)
             {
