@@ -12,7 +12,12 @@ namespace Jalgpallinaide
         public Team AwayTeam { get; }
         public Stadium Stadium { get; }
         public Ball Ball { get; private set; }
+        public bool IsRunning { get; private set; } = true;
 
+        public void Stop()
+        {
+            IsRunning = false;
+        }
 
         //конструктор
         public Game(Team homeTeam, Team awayTeam, Stadium stadium)
