@@ -10,6 +10,7 @@ namespace Jalgpallinaide
 
     public class Program
     {
+        //muuda värv
         static void ChangeConsoleColor(ConsoleColor foregroundColor)
         {
             Console.ForegroundColor = foregroundColor;
@@ -20,7 +21,7 @@ namespace Jalgpallinaide
             // loomine team ja stadium
             Team esimeneTeam = new Team("Esimene Team");
             Team teineTeam = new Team("Teine Team");
-            Stadium stadium = new Stadium(40, 30);
+            Stadium stadium = new Stadium(60, 40);
             Game game = new Game(esimeneTeam, teineTeam, stadium);
 
             // loomine mängija
@@ -56,7 +57,7 @@ namespace Jalgpallinaide
             for (int y = 0; y < height; y++)
             {
                 Console.SetCursorPosition(0, y + 1); 
-                Console.Write("("); // border
+                Console.Write("!"); // border
                 for (int x = 0; x < width; x++)
                 {
                     if (IsPlayerAtPosition(x, y, homePlayers))
@@ -84,7 +85,7 @@ namespace Jalgpallinaide
                 }
                 Console.ResetColor();
                 ChangeConsoleColor(ConsoleColor.Yellow);
-                Console.Write(")"); // правая вертикальная рамка
+                Console.Write("!"); // правая вертикальная рамка
             }
         }
 
